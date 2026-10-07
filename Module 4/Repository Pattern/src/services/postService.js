@@ -1,11 +1,11 @@
-const postStore = require('../data/postStore');
+const postStore = require('../repositories/postRepository');
 
 function listPosts() {
   return postStore.posts;
 }
 
 function getPost(id) {
-  return postStore.posts.find((post) => post.id === Number(id)) || null;
+  return postRepository.findById(id);
 }
 
 function createPost(fields) {
